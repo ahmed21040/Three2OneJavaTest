@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLink="/home">Three2One</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/registeredcourse">RegisteredCourses</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<table class="table table-striped" style="margin-top: 50px">
+  <thead >
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Course Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Instractor</th>
+    <th scope="col">Last update</th>
+    <th scope="col">Publish Data</th>
+    <th scope="col">Total Hour</th>
+    <th scope="col">Goin into Course</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of allCourses ; let i=index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{c.courseName}}</td>
+    <td>{{c.description}}</td>
+    <td>{{c.instractor}}</td>
+    <td>{{c.lastUpdate}}</td>
+    <td>{{c.publishDate}}</td>
+    <td>{{c.totalHour}}</td>
+    <td>
+      <button class="btn btn-lg btn-primary" (click)="registerIntCourse(c.id)">
+     Register</button>
+      </td>
+
+  </tr>
+  </tbody>
+</table>

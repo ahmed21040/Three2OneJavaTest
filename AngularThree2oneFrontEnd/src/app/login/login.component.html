@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+      <div class="account-wall">
+        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+             alt="">
+        <form class="form-signin" [formGroup]="userForm" >
+          <input type="text" class="form-control" formControlName="email" placeholder="Email" required autofocus>
+          <label *ngIf="userForm.get('email').invalid && userForm.get('email').dirty" class = "error"> Email invalid </label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+          <label *ngIf="userForm.get('password').invalid && userForm.get('password').dirty" class = "error"> password is requird </label>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">
+            Sign in</button>
+        </form>
+      </div>
+      <a routerLink="/register" class="text-center new-account">Create an account </a>
+    </div>
+    <div class="col-md-4"></div>
+
+  </div>
+</div>

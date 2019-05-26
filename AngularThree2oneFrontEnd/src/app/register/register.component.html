@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-sm-6 col-md-4 col-md-offset-4">
+      <div class="account-wall">
+        <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+             alt="">
+        <form class="form-signin" [formGroup]="userForm" >
+          <input type="text" class="form-control" formControlName="name" placeholder="Name" required autofocus>
+          <label *ngIf="userForm.get('name').invalid && userForm.get('name').dirty" class = "error">name is requird </label>
+
+          <input type="text" class="form-control" formControlName="email" placeholder="Email" required >
+          <label *ngIf="userForm.get('email').invalid && userForm.get('email').dirty" class = "error"> Email invalid </label>
+
+          <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+          <label *ngIf="userForm.get('password').invalid && userForm.get('password').dirty" class = "error"> password is requird </label>
+
+          <input type="text" class="form-control" formControlName="username" placeholder="Username" required>
+          <label *ngIf="userForm.get('username').invalid && userForm.get('username').dirty" class = "error">username is requird </label>
+
+          <div class="form-group">
+            <div class="maxl">
+              <label class="radio inline">
+                <input type="radio" formControlName="gender" value="male" checked>
+                <span> Male </span>
+              </label>
+              <label class="radio inline">
+                <input type="radio" formControlName="gender"  value="female">
+                <span>Female </span>
+              </label>
+            </div>
+          </div>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="register()">
+            Register</button>
+        </form>
+      </div>
+      <a routerLink="/login" class="text-center new-account">or sign in</a>
+    </div>
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
